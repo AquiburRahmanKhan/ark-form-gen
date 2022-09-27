@@ -1,0 +1,39 @@
+import { Button, Col, Form, Row{{#each importsArray}}, {{this}}{{/each}} } from "antd";
+import React from "react";
+
+const App = () => {
+  const [form] = Form.useForm();
+
+  const onFinish = (values) => {
+    console.log("Success:", values);
+  };
+
+  return (
+    <section className="form-container">
+      <Row>
+        <Col span={24}>
+           {{> formOpenTagPartial formPropsArray=formPropsArray}}
+            {{#each fieldsPropsArray}}
+            {{#if (eq this.type 'text')}}
+            {{> inputPartial fieldProps=this }}
+            {{/if}}
+            {{#if (eq this.type 'password')}}
+            {{> passwordPartial fieldProps=this }}
+            {{/if}}
+            {{#if (eq this.type 'checkbox')}}
+            {{> checkboxPartial fieldProps=this }}
+            {{/if}}
+            {{/each}}
+            <Form.Item wrapperCol=\{{ offset: 4, span: 16 }}>
+              <Button type="primary" htmlType="submit">
+                Submit
+              </Button>
+            </Form.Item>
+          </Form>
+        </Col>
+        </Row>
+    </section>
+  );
+}
+
+export default App;

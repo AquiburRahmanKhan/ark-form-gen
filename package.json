@@ -1,5 +1,41 @@
 {
   "name": "ark-form-gen",
   "description": "A dynamic, flexible form generator for various languages",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "bin": {
+    "AFG": "lib/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AquiburRahmanKhan/ark-form-gen.git"
+  },
+  "keywords": [
+    "react",
+    "form",
+    "html",
+    "generator",
+    "form"
+  ],
+  "author": "Aquibur Rahman Khan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AquiburRahmanKhan/ark-form-gen/issues"
+  },
+  "homepage": "https://github.com/AquiburRahmanKhan/ark-form-gen#readme",
+  "devDependencies": {
+    "@types/handlebars-helpers": "^0.5.3",
+    "@types/node": "^18.7.18",
+    "handlebars": "^4.7.7",
+    "just-handlebars-helpers": "^1.0.19",
+    "typescript": "^4.8.3"
+  },
+  "dependencies": {
+    "json5": "^2.2.1"
+  }
 }
