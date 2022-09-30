@@ -5,8 +5,7 @@ export const readFile = (filePath: string) => {
     const fileContent: string = fs.readFileSync(filePath, "utf8");
     return JSON.parse(fileContent);
   } catch (err: any) {
-    console.error(`No such file found for ${err.path}`);
-    process.exit();
+    throw new Error(`No such file found for ${err.path}`);
   }
 };
 
@@ -14,8 +13,7 @@ export const readHandlebarTemplate = (filePath: string) => {
   try {
     return fs.readFileSync(filePath, "utf8");
   } catch (err: any) {
-    console.error(`No such file found for ${err.path}`);
-    process.exit();
+    throw new Error(`No such file found for ${err.path}`);
   }
 };
 
@@ -23,9 +21,8 @@ export const writeFile = (filePath: string, html: string) => {
   try {
     fs.writeFileSync(filePath, html);
     console.log(`Successfully generated form at ${filePath}`);
-  } catch (err) {
-    console.error(err);
-    process.exit();
+  } catch (err: any) {
+    throw new Error(err.message);
   }
 };
 
@@ -39,7 +36,6 @@ export const createDirectory = (dirPath: string) => {
       fs.mkdirSync(dirPath);
     }
   } catch (err: any) {
-    console.error(err);
-    process.exit();
+    throw new Error(err.message);
   }
 };
