@@ -27,7 +27,23 @@ export interface ICheckboxProps {
   rules?: any[];
 }
 
-export interface IFieldProps extends IInputProps, ICheckboxProps {}
+export interface ISelectOptionProps {
+  value: string;
+  label: string;
+}
+
+export interface ISelectProps {
+  name: string;
+  type: string;
+  label?: string;
+  options?: ISelectOptionProps[];
+  rules?: any[];
+}
+
+export interface IFieldProps
+  extends IInputProps,
+    ICheckboxProps,
+    ISelectProps {}
 
 export interface IFormData {
   form: IFormProps;
@@ -41,10 +57,12 @@ export interface IAntdImports {
   text: string;
   password: string;
   checkbox: string;
+  select: string;
 }
 
 export interface IFieldPropsForHandlebar {
-  text: (field: IFieldProps) => any;
-  password: (field: IFieldProps) => any;
-  checkbox: (field: IFieldProps) => any;
+  text: (field: IInputProps) => any;
+  password: (field: IInputProps) => any;
+  checkbox: (field: ICheckboxProps) => any;
+  select: (field: ISelectProps) => any;
 }

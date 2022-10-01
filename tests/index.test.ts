@@ -48,7 +48,13 @@ const App = () => {
   };
 
   return (
-    <section className="form-container">
+    <section
+      style={{
+        border: "1px solid blue",
+        padding: "40px 20px 20px 20px",
+        boxSizing: "border-box",
+      }}
+    >
       <Row>
         <Col span={24}>
            <Form

@@ -6,28 +6,36 @@ const ANTDIMPORTS: types.IAntdImports = {
   text: "Input",
   password: "Input",
   checkbox: "Checkbox",
+  select: "Select",
 };
 
 const FIELDPROPSFORHANDLEBAR: types.IFieldPropsForHandlebar = {
-  text: (field: types.IFieldProps) => ({
+  text: (field: types.IInputProps) => ({
     name: field.name,
     type: field.type,
     label: field.label,
     extra: field.extra,
     rules: field.rules?.length ? rulesToStringArray(field.rules) : false,
   }),
-  password: (field: types.IFieldProps) => ({
+  password: (field: types.IInputProps) => ({
     name: field.name,
     type: field.type,
     label: field.label,
     extra: field.extra,
     rules: field.rules?.length ? rulesToStringArray(field.rules) : false,
   }),
-  checkbox: (field: types.IFieldProps) => ({
+  checkbox: (field: types.ICheckboxProps) => ({
     name: field.name,
     type: field.type,
     label: field.label,
     text: field.text,
+    rules: field.rules?.length ? rulesToStringArray(field.rules) : false,
+  }),
+  select: (field: types.ISelectProps) => ({
+    name: field.name,
+    type: field.type,
+    label: field.label,
+    options: field.options,
     rules: field.rules?.length ? rulesToStringArray(field.rules) : false,
   }),
 };
@@ -44,21 +52,17 @@ export const getAntdImports = (fields: any[]): string[] => {
 export const getFormProps = (formProps: types.IFormProps): string[] => {
   const formPropsArray: string[] = [];
   for (const key in formProps) {
-    if (
-      typeof formProps[key as keyof types.IFormProps] === "string" &&
-      key !== "labelCol" &&
-      key !== "wrapperCol"
-    ) {
+    if (key === "labelCol" || key === "wrapperCol") {
+      formPropsArray.push(
+        `${key}={{ span: ${formProps[key as keyof types.IFormProps]} }}`
+      );
+    } else if (typeof formProps[key as keyof types.IFormProps] === "string") {
       formPropsArray.push(
         `${key}="${formProps[key as keyof types.IFormProps]}"`
       );
     } else if (typeof formProps[key as keyof types.IFormProps] === "boolean") {
       formPropsArray.push(
         `${key}={${formProps[key as keyof types.IFormProps]}}`
-      );
-    } else if (key === "labelCol" || key === "wrapperCol") {
-      formPropsArray.push(
-        `${key}={{ span: ${formProps[key as keyof types.IFormProps]} }}`
       );
     }
   }

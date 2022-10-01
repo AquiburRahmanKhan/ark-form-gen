@@ -2,13 +2,14 @@
   "name": "ark-form-gen",
   "description": "A dynamic, flexible form generator for antd",
   "version": "0.0.1",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "lib/src/index.js",
+  "types": "lib/src/index.d.ts",
   "bin": {
-    "AFG": "lib/cli.js"
+    "AFG": "lib/src/cli.js"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "rm -rf /lib && tsc",
+    "postbuild": "copyfiles --up 1 src/templates/*.* src/templates/partials/*.* lib/src/",
     "test": "jest --collect-coverage"
   },
   "repository": {
@@ -32,6 +33,7 @@
     "@types/handlebars-helpers": "^0.5.3",
     "@types/jest": "^29.0.3",
     "@types/node": "^18.7.18",
+    "copyfiles": "^2.4.1",
     "handlebars": "^4.7.7",
     "jest": "^29.0.3",
     "json5": "^2.2.1",

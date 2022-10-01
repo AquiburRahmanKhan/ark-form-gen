@@ -9,7 +9,13 @@ const App = () => {
   };
 
   return (
-    <section className="form-container">
+    <section
+      style=\{{
+        border: "1px solid blue",
+        padding: "40px 20px 20px 20px",
+        boxSizing: "border-box",
+      }}
+    >
       <Row>
         <Col span={24}>
            {{> formOpenTagPartial formPropsArray=formPropsArray}}
@@ -22,6 +28,9 @@ const App = () => {
             {{/if}}
             {{#if (eq this.type 'checkbox')}}
             {{> checkboxPartial fieldProps=this }}
+            {{/if}}
+            {{#if (eq this.type 'select')}}
+            {{> selectPartial fieldProps=this }}
             {{/if}}
             {{/each}}
             <Form.Item wrapperCol=\{{ offset: 4, span: 16 }}>

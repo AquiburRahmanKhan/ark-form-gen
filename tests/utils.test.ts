@@ -82,6 +82,24 @@ describe("Testing utils functions", () => {
           type: "checkbox",
           label: "test",
         },
+        {
+          name: "gender",
+          type: "select",
+          label: "Gender",
+          options: [{ value: "male", label: "Male" }],
+        },
+        {
+          name: "gender",
+          type: "select",
+          label: "Gender",
+          options: [{ value: "female", label: "Female" }],
+          rules: [
+            {
+              required: true,
+              message: "test",
+            },
+          ],
+        },
       ])
     ).toEqual([
       {
@@ -123,6 +141,20 @@ describe("Testing utils functions", () => {
         type: "checkbox",
         label: "test",
         rules: false,
+      },
+      {
+        name: "gender",
+        type: "select",
+        label: "Gender",
+        options: [{ value: "male", label: "Male" }],
+        rules: false,
+      },
+      {
+        name: "gender",
+        type: "select",
+        label: "Gender",
+        options: [{ value: "female", label: "Female" }],
+        rules: ["{required:true,message:'test'}"],
       },
     ]);
   });

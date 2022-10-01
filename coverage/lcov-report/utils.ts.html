@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>32/32</span>
+                <span class='fraction'>33/33</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>28/28</span>
+                <span class='fraction'>31/31</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>10/10</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>27/27</span>
+                <span class='fraction'>28/28</span>
             </div>
         
             
@@ -144,7 +144,10 @@
 <a name='L79'></a><a href='#L79'>79</a>
 <a name='L80'></a><a href='#L80'>80</a>
 <a name='L81'></a><a href='#L81'>81</a>
-<a name='L82'></a><a href='#L82'>82</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -156,6 +159,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -191,21 +201,17 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -213,12 +219,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -236,25 +242,32 @@ const ANTDIMPORTS: types.IAntdImports = {
 };
 &nbsp;
 const FIELDPROPSFORHANDLEBAR: types.IFieldPropsForHandlebar = {
-  text: (field: types.IFieldProps) =&gt; ({
+  text: (field: types.IInputProps) =&gt; ({
     name: field.name,
     type: field.type,
     label: field.label,
     extra: field.extra,
     rules: field.rules?.length ? rulesToStringArray(field.rules) : false,
   }),
-  password: (field: types.IFieldProps) =&gt; ({
+  password: (field: types.IInputProps) =&gt; ({
     name: field.name,
     type: field.type,
     label: field.label,
     extra: field.extra,
     rules: field.rules?.length ? rulesToStringArray(field.rules) : false,
   }),
-  checkbox: (field: types.IFieldProps) =&gt; ({
+  checkbox: (field: types.ICheckboxProps) =&gt; ({
     name: field.name,
     type: field.type,
     label: field.label,
     text: field.text,
+    rules: field.rules?.length ? rulesToStringArray(field.rules) : false,
+  }),
+  select: (field: types.ISelectProps) =&gt; ({
+    name: field.name,
+    type: field.type,
+    label: field.label,
+    options: field.options,
     rules: field.rules?.length ? rulesToStringArray(field.rules) : false,
   }),
 };
@@ -271,21 +284,17 @@ export const getAntdImports = (fields: any[]): string[] =&gt; {
 export const getFormProps = (formProps: types.IFormProps): string[] =&gt; {
   const formPropsArray: string[] = [];
   for (const key in formProps) {
-    if (
-      typeof formProps[key as keyof types.IFormProps] === "string" &amp;&amp;
-      key !== "labelCol" &amp;&amp;
-      key !== "wrapperCol"
-    ) {
+    if (key === "labelCol" || key === "wrapperCol") {
+      formPropsArray.push(
+        `${key}={{ span: ${formProps[key as keyof types.IFormProps]} }}`
+      );
+    } else if (typeof formProps[key as keyof types.IFormProps] === "string") {
       formPropsArray.push(
         `${key}="${formProps[key as keyof types.IFormProps]}"`
       );
     } else if (typeof formProps[key as keyof types.IFormProps] === "boolean") {
       formPropsArray.push(
         `${key}={${formProps[key as keyof types.IFormProps]}}`
-      );
-    } else if (key === "labelCol" || key === "wrapperCol") {
-      formPropsArray.push(
-        `${key}={{ span: ${formProps[key as keyof types.IFormProps]} }}`
       );
     }
   }
@@ -313,7 +322,7 @@ export const processFieldsProps = (fields: types.IFieldProps[]): any =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-09-28T21:52:33.242Z
+                at 2022-09-30T23:43:37.738Z
             </div>
         <script src="prettify.js"></script>
         <script>
