@@ -17,7 +17,11 @@
   {{/if}}
   valuePropName="checked" 
   {{#if (not fieldProps.label)}}
-  wrapperCol=\{{ offset: 4, span: 16 }}
+  wrapperCol=\{{ 
+    sm: { span: 24 }, 
+    md: { span: 18, offset: 6 },
+    lg: { span: 20, offset: 4 },
+  }}
   {{/if}}
   >
   <Checkbox>{{ fieldProps.text }}</Checkbox>

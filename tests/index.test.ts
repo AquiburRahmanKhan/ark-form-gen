@@ -59,6 +59,8 @@ const App = () => {
         <Col span={24}>
            <Form
              form={form}
+             labelCol={{ sm: { span: 24 }, md: { span: 6 }, lg: { span: 4 } }}
+             wrapperCol={{ sm: { span: 24 }, md: { span: 18 }, lg: { span: 20 }}}
              name="generated-form"
              onFinish={onFinish}
            >
@@ -72,7 +74,12 @@ const App = () => {
             >
               <Input />
             </Form.Item>
-            <Form.Item wrapperCol={{ offset: 4, span: 16 }}>
+            <Form.Item wrapperCol={{ 
+              sm: { span: 24 },
+              md: { span: 18, offset: 6 },
+              lg: { span: 20, offset: 4 },
+             }}
+            >
               <Button type="primary" htmlType="submit">
                 Submit
               </Button>

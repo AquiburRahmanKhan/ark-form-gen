@@ -21,7 +21,11 @@ const generateForm = (filePath: string) => {
     "inputPartial",
     "passwordPartial",
     "checkboxPartial",
+    "checkboxGroupPartial",
     "selectPartial",
+    "radioPartial",
+    "datepickerPartial",
+    "rangepickerPartial",
   ]);
 
   // Register Main Template

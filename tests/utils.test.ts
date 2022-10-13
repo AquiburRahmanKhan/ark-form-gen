@@ -15,16 +15,9 @@ describe("Testing utils functions", () => {
     expect(
       utils.getFormProps({
         name: "testForm",
-        labelCol: 4,
-        wrapperCol: 8,
         colon: true,
       })
-    ).toEqual([
-      'name="testForm"',
-      "labelCol={{ span: 4 }}",
-      "wrapperCol={{ span: 8 }}",
-      "colon={true}",
-    ]);
+    ).toEqual(['name="testForm"', "colon={true}"]);
   });
 
   test("Test whether array of field props is returned for given fields", () => {
@@ -69,6 +62,7 @@ describe("Testing utils functions", () => {
         {
           name: "testField",
           type: "checkbox",
+          text: "Test Field",
           label: "test",
           rules: [
             {
@@ -80,7 +74,26 @@ describe("Testing utils functions", () => {
         {
           name: "testField",
           type: "checkbox",
+          text: "Test Field",
           label: "test",
+        },
+        {
+          name: "testField",
+          label: "test",
+          type: "checkboxGroup",
+          options: [{ value: "tomato", label: "Tomato" }],
+          rules: [
+            {
+              required: true,
+              message: "test",
+            },
+          ],
+        },
+        {
+          name: "testField",
+          label: "test",
+          type: "checkboxGroup",
+          options: [{ value: "tomato", label: "Tomato" }],
         },
         {
           name: "gender",
@@ -99,6 +112,56 @@ describe("Testing utils functions", () => {
               message: "test",
             },
           ],
+        },
+        {
+          name: "testField",
+          label: "test",
+          type: "radio",
+          options: [{ value: "apple", label: "Apple" }],
+          rules: [
+            {
+              required: true,
+              message: "test",
+            },
+          ],
+        },
+        {
+          name: "testField",
+          label: "test",
+          type: "radio",
+          options: [{ value: "apple", label: "Apple" }],
+        },
+        {
+          name: "testField",
+          label: "test",
+          type: "datepicker",
+          rules: [
+            {
+              required: true,
+              message: "test",
+            },
+          ],
+        },
+        {
+          name: "testField",
+          label: "test",
+          type: "datepicker",
+        },
+        {
+          name: "testField",
+          label: "test",
+          type: "rangepicker",
+          rules: [
+            {
+              required: true,
+              message: "test",
+            },
+          ],
+        },
+        {
+          name: "testField",
+          label: "test",
+          type: "rangepicker",
         },
       ])
     ).toEqual([
@@ -133,13 +196,29 @@ describe("Testing utils functions", () => {
       {
         name: "testField",
         type: "checkbox",
+        text: "Test Field",
         label: "test",
         rules: ["{required:true,message:'test'}"],
       },
       {
         name: "testField",
         type: "checkbox",
+        text: "Test Field",
         label: "test",
+        rules: false,
+      },
+      {
+        name: "testField",
+        type: "checkboxGroup",
+        label: "test",
+        options: [{ value: "tomato", label: "Tomato" }],
+        rules: ["{required:true,message:'test'}"],
+      },
+      {
+        name: "testField",
+        type: "checkboxGroup",
+        label: "test",
+        options: [{ value: "tomato", label: "Tomato" }],
         rules: false,
       },
       {
@@ -155,6 +234,44 @@ describe("Testing utils functions", () => {
         label: "Gender",
         options: [{ value: "female", label: "Female" }],
         rules: ["{required:true,message:'test'}"],
+      },
+      {
+        name: "testField",
+        label: "test",
+        type: "radio",
+        options: [{ value: "apple", label: "Apple" }],
+        rules: ["{required:true,message:'test'}"],
+      },
+      {
+        name: "testField",
+        label: "test",
+        type: "radio",
+        options: [{ value: "apple", label: "Apple" }],
+        rules: false,
+      },
+      {
+        name: "testField",
+        label: "test",
+        type: "datepicker",
+        rules: ["{required:true,message:'test'}"],
+      },
+      {
+        name: "testField",
+        label: "test",
+        type: "datepicker",
+        rules: false,
+      },
+      {
+        name: "testField",
+        label: "test",
+        type: "rangepicker",
+        rules: ["{required:true,message:'test'}"],
+      },
+      {
+        name: "testField",
+        label: "test",
+        type: "rangepicker",
+        rules: false,
       },
     ]);
   });

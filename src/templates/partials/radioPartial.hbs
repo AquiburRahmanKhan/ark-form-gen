@@ -1,0 +1,21 @@
+<Form.Item
+  {{#if fieldProps.label}}
+  label="{{ fieldProps.label }}"
+  {{/if}}
+  {{#if fieldProps.name}}
+  name="{{ fieldProps.name }}"
+  {{/if}}
+  {{#if fieldProps.rules}}
+  rules={[ 
+    {{#each fieldProps.rules }}
+    {{{this}}},
+    {{/each}} 
+  ]}
+  {{/if}}
+>
+  <Radio.Group>
+    {{#each fieldProps.options }}
+    <Radio value="{{this.value}}">{{this.label}}</Radio>
+    {{/each}}
+  </Radio.Group>
+</Form.Item>
