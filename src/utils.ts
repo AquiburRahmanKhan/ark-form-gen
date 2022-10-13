@@ -11,6 +11,7 @@ const ANTDIMPORTS: types.IAntdImports = {
   radio: "Radio",
   datepicker: "DatePicker",
   rangepicker: "DatePicker",
+  switch: "Switch",
 };
 
 const FIELDPROPSFORHANDLEBAR: types.IFieldPropsForHandlebar = {
@@ -63,6 +64,12 @@ const FIELDPROPSFORHANDLEBAR: types.IFieldPropsForHandlebar = {
     rules: field.rules?.length ? rulesToStringArray(field.rules) : false,
   }),
   rangepicker: (field: types.IDatepickerProps) => ({
+    name: field.name,
+    type: field.type,
+    label: field.label,
+    rules: field.rules?.length ? rulesToStringArray(field.rules) : false,
+  }),
+  switch: (field: types.ISwitchProps) => ({
     name: field.name,
     type: field.type,
     label: field.label,

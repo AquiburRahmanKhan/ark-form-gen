@@ -1,0 +1,18 @@
+<Form.Item
+  {{#if fieldProps.label}}
+  label="{{ fieldProps.label }}"
+  {{/if}}
+  {{#if fieldProps.name}}
+  name="{{ fieldProps.name }}"
+  {{/if}}
+  valuePropName="checked"
+  {{#if fieldProps.rules}}
+  rules={[ 
+    {{#each fieldProps.rules }}
+    {{{this}}},
+    {{/each}} 
+  ]}
+  {{/if}}
+>
+  <Switch />
+</Form.Item>

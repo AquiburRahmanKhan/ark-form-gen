@@ -70,6 +70,13 @@ export interface IDatepickerProps {
   rules?: any[];
 }
 
+export interface ISwitchProps {
+  name: string;
+  type: string;
+  label: string;
+  rules?: any[];
+}
+
 export interface IFormData {
   form: IFormProps;
   fields: any[];
@@ -87,6 +94,7 @@ export interface IAntdImports {
   radio: string;
   datepicker: string;
   rangepicker: string;
+  switch: string;
 }
 
 export interface IFieldPropsForHandlebar {
@@ -98,4 +106,5 @@ export interface IFieldPropsForHandlebar {
   radio: (field: IRadioProps) => any;
   datepicker: (field: IDatepickerProps) => any;
   rangepicker: (field: IDatepickerProps) => any;
+  switch: (field: ISwitchProps) => any;
 }
