@@ -77,6 +77,15 @@ export interface ISwitchProps {
   rules?: any[];
 }
 
+export interface ITextareaProps {
+  name: string;
+  type: string;
+  rows: number | string;
+  label?: string;
+  extra?: string;
+  rules?: any[];
+}
+
 export interface IFormData {
   form: IFormProps;
   fields: any[];
@@ -95,6 +104,7 @@ export interface IAntdImports {
   datepicker: string;
   rangepicker: string;
   switch: string;
+  textarea: string;
 }
 
 export interface IFieldPropsForHandlebar {
@@ -107,4 +117,5 @@ export interface IFieldPropsForHandlebar {
   datepicker: (field: IDatepickerProps) => any;
   rangepicker: (field: IDatepickerProps) => any;
   switch: (field: ISwitchProps) => any;
+  textarea: (field: ITextareaProps) => any;
 }

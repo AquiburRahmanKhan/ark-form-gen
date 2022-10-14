@@ -27,6 +27,7 @@ const generateForm = (filePath: string) => {
     "datepickerPartial",
     "rangepickerPartial",
     "switchPartial",
+    "textareaPartial",
   ]);
 
   // Register Main Template

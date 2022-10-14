@@ -47,6 +47,9 @@ const App = () => {
             {{#if (eq this.type 'switch')}}
             {{> switchPartial fieldProps=this }}
             {{/if}}
+            {{#if (eq this.type 'textarea')}}
+            {{> textareaPartial fieldProps=this }}
+            {{/if}}
             {{/each}}
             <Form.Item wrapperCol=\{{ 
               sm: { span: 24 },

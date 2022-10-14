@@ -12,6 +12,7 @@ const ANTDIMPORTS: types.IAntdImports = {
   datepicker: "DatePicker",
   rangepicker: "DatePicker",
   switch: "Switch",
+  textarea: "Input",
 };
 
 const FIELDPROPSFORHANDLEBAR: types.IFieldPropsForHandlebar = {
@@ -73,6 +74,14 @@ const FIELDPROPSFORHANDLEBAR: types.IFieldPropsForHandlebar = {
     name: field.name,
     type: field.type,
     label: field.label,
+    rules: field.rules?.length ? rulesToStringArray(field.rules) : false,
+  }),
+  textarea: (field: types.ITextareaProps) => ({
+    name: field.name,
+    type: field.type,
+    label: field.label,
+    rows: field.rows,
+    extra: field.extra,
     rules: field.rules?.length ? rulesToStringArray(field.rules) : false,
   }),
 };

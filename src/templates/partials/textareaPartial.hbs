@@ -1,0 +1,20 @@
+<Form.Item
+  {{#if fieldProps.label}}
+  label="{{ fieldProps.label }}"
+  {{/if}}
+  {{#if fieldProps.name}}
+  name="{{ fieldProps.name }}"
+  {{/if}}
+  {{#if fieldProps.extra}}
+  extra="{{ fieldProps.extra }}"
+  {{/if}}
+  {{#if fieldProps.rules}}
+  rules={[ 
+    {{#each fieldProps.rules }}
+    {{{this}}},
+    {{/each}} 
+  ]}
+  {{/if}}
+>
+  <Input.TextArea rows={{#if fieldProps.rows}}{ {{~fieldProps.rows~}} }{{else}}{2}{{/if}} />
+</Form.Item>

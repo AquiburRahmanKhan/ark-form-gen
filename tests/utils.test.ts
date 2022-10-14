@@ -163,6 +163,39 @@ describe("Testing utils functions", () => {
           label: "test",
           type: "rangepicker",
         },
+        {
+          label: "test",
+          name: "testField",
+          type: "textarea",
+          rows: 4,
+          rules: [
+            {
+              required: true,
+              message: "test",
+            },
+          ],
+        },
+        {
+          label: "test",
+          name: "testField",
+          type: "textarea",
+        },
+        {
+          name: "testField",
+          label: "test",
+          type: "switch",
+        },
+        {
+          name: "testField",
+          label: "test",
+          type: "switch",
+          rules: [
+            {
+              required: true,
+              message: "test",
+            },
+          ],
+        },
       ])
     ).toEqual([
       {
@@ -272,6 +305,34 @@ describe("Testing utils functions", () => {
         label: "test",
         type: "rangepicker",
         rules: false,
+      },
+      {
+        label: "test",
+        name: "testField",
+        type: "textarea",
+        rows: 4,
+        extra: undefined,
+        rules: ["{required:true,message:'test'}"],
+      },
+      {
+        label: "test",
+        name: "testField",
+        type: "textarea",
+        extra: undefined,
+        rows: undefined,
+        rules: false,
+      },
+      {
+        name: "testField",
+        label: "test",
+        type: "switch",
+        rules: false,
+      },
+      {
+        name: "testField",
+        label: "test",
+        type: "switch",
+        rules: ["{required:true,message:'test'}"],
       },
     ]);
   });
