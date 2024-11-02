@@ -31,7 +31,6 @@ const checkIfDirectoryDoesNotExist = (dirPath: string) => {
 };
 
 export const createDirectory = (dirPath: string) => {
-  console.log("Creating directory");
   try {
     if (checkIfDirectoryDoesNotExist(dirPath)) {
       fs.mkdirSync(dirPath);
